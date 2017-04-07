@@ -609,26 +609,14 @@
         padding: 33px 26px 32px 26px;
     }
 
-    .full-width-header .c-hamburger span {
-        height: 2px; 
-    }
-
-    .full-width-header .c-hamburger span:before, .full-width-header .c-hamburger span:after {
-        height: 2px; 
-    }
-
     .menu-right .c-hamburger span, .menu-right .c-hamburger span:before, .menu-right .c-hamburger span:after{
         position:relative;
         height:1px;
         color:#999;
     }
 
-    .full-width-header .c-hamburger span:before {
-        top: -6px; 
-    }
-
     .menu-right .c-hamburger span:before {
-        top: -5px; 
+        top: -6px;
     }
 
     .full-width-header .c-hamburger span:after {
@@ -636,20 +624,15 @@
     }
 
     .menu-right .c-hamburger span:after {
-        bottom: 19px; 
+       	position:absolute;
+        top: 6px;
     }
 
     /* site map button hover state, in the right menu fullheader*/
     .menu-right .c-hamburger:hover span, .menu-right .c-hamburger:hover span:before, .menu-right .c-hamburger:hover span:after{
         background-color: #2b2b2b;
     }
-    .c-hamburger span::before {
-        top: -4px; 
-    }
 
-    .c-hamburger span::after {
-        bottom: -4px; 
-    }
 
     /*the site map button is hidden for resolutions under 1229px */
     .menu-right .c-hamburger {

@@ -4001,6 +4001,7 @@ header .section{
 .swiper-wrapper {
   	-webkit-box-sizing: border-box;
   	box-sizing: border-box; 
+	width:100% !important;
 }
 
 .main-posts-1 .main-slider-right .container-articles{
