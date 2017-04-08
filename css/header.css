@@ -615,7 +615,7 @@
         color:#999;
     }
 
-    .menu-right .c-hamburger span:before {
+    .c-hamburger span:before {
         top: -6px;
     }
 
@@ -623,7 +623,7 @@
         bottom: -6px; 
     }
 
-    .menu-right .c-hamburger span:after {
+    .menu-right .c-hamburger span:after, .sticky-header .c-hamburger span:after, .header-mb .c-hamburger span:after {
        	position:absolute;
         top: 6px;
     }
