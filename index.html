@@ -63,6 +63,7 @@
     <link rel="stylesheet" href="css/header.css" />
     <!-- endbuild -->
     <script src="vendor/video/_video.min.js"></script>
+    <script src="vendor/youtube/youtube.min.js"></script>
 </head>
 
 <body>
@@ -368,22 +369,24 @@
                                     <div class="js-main-slider-2 swiper-wrapper">
                                     
                                      	<div class=" swiper-slide">                                           
-                                            <video loop class="video-js vjs-default-skin vjs-big-play-centered" preload="auto" controls>
-                                                <source src="video/video.mp4" type="video/mp4" />
-                                                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                                            	<!-- Poster -->
-                                                	<img class="poster" src="img/slider/video-poster.jpg">
-                                                <!-- Poster -->
-                                            </video>                                           
+                                            <video
+                                                class="video-js vjs-default-skin vjs-big-play-centered"
+                                                controls
+                                                preload="auto"
+                                                width="640" height="264"
+                                                data-setup='{ "techOrder": ["youtube", "html5"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=IFzEPnJwbiw"}] }'
+                                              >
+                                            </video>
                                         </div>
                                         
                                      	<div class=" swiper-slide">                                           
-                                            <video loop class="video-js vjs-default-skin vjs-big-play-centered" preload="auto" controls>
-                                                <source src="video/video2.mp4" type="video/mp4" />
-                                                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>
-                                            	<!-- Poster -->
-                                                	<img class="poster" src="img/slider/video-poster2.jpg">
-                                                <!-- Poster -->
+                                            <video
+                                                class="video-js vjs-default-skin vjs-big-play-centered"
+                                                controls
+                                                preload="auto"
+                                                width="640" height="264"
+                                                data-setup='{ "techOrder": ["youtube", "html5"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=FjIIuEZHbyY"}] }'
+                                              >
                                             </video>                                           
                                         </div>
 

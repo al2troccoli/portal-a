@@ -1,5 +1,5 @@
 // Main slider home page
-(function() {
+(function () {
 
     $(document).ready(function() {
 		
@@ -123,6 +123,10 @@
                onSlideChange(swiper);
             });	
 
+            swiper.on('onSlideChangeEnd', function () {
+               onSlideChangeEnd(swiper);
+            });
+
             SetVideos();
         }		
 		
@@ -135,29 +139,18 @@
             var totalVideos = document.querySelectorAll(".main-posts-1 .swiper-slide .video-js");	      
             
             if(totalVideos.length !== 0 ){
-
                     //TODO : usar each
                     for(var i = 0; i < totalVideos.length; i++) {
                         var current = totalVideos[i];
                         
                         // Modificando el id de los videos, para evitar que existan dos videos con el mismo id por los duplicados del loop del slider
                         $(current).attr('id','video'+i);
-                        
-                        // Layer para que el video solo se reproduzca dándole al play
-                        $(current).parent().prepend("<div class='layer video"+i+"'></div>");
 
                         // Instanciando
-                        playersCollection[i] = videojs('video'+i, {
-                            "poster" : $(current).find('img.poster').attr('src')
-                        }); 
-                        
-                        playersCollection[i].on('play', function(event) {
-                            $('.swiper-slide-active .layer').fadeOut();
-                        });
+                        playersCollection[i] = videojs('video'+i);
+
                     }		
-                    
-                    
-                    
+
                     //saber si el pirmer slide tiene un video
                     var firstSlideIsVideo = $(".swiper-slide-active .video-js");
                     
@@ -172,7 +165,6 @@
                         // actualizar currentVideo primera vez
                         currentVideo = firstSlideIsVideo[0].player;
                     }
-          
             }
         }
 
@@ -213,7 +205,16 @@
                     currentVideo = newCurrent[0].player;
                 }
             }
+
+			$(".container-main-post-1 .swiper-slide").css({"visibility":"visible"});
+
         }
+
+		function onSlideChangeEnd(swiper){
+			$(".container-main-post-1 .swiper-slide").css({"visibility":"hidden"});
+			$(".container-main-post-1 .swiper-slide.swiper-slide-active").css({"visibility":"visible"});
+
+		}
 
         //Actualiza los thumbs y la información asociada al slide al cambiar los slides 
         function updateSliderState(thumbToHideIndex, direction){
