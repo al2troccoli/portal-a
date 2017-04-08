@@ -7020,3 +7020,10 @@ footer .footer-social h6{
   font: 16px/26px "Georgia";
 }
 
+.swiper-slide{
+        visibility:hidden;
+}
+
+.swiper-slide.swiper-slide-active{
+        visibility:visible;
+}
