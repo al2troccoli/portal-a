@@ -7,7 +7,6 @@
         var singleSlideMode = $('.main-slider-2').data("single-slide-mode");
 
         if(!singleSlideMode){
-
             initSliderMode();
 
         }
@@ -171,8 +170,8 @@
                             $(document).off("loaderComplete");
                         })  
 
+                        currentVideo = videoContainer[0].player;
                     }
-                    currentVideo = videoContainer[0].player;
                 }
             }
 
@@ -297,12 +296,12 @@
         function initSingleSlideMode(){
 
             // NOTE Seteando estilos para el slider y panel lateral de informacion
-            $('.swiper-slide').css({"visibility":"visible"});
+            $('.swiper-slide').css({"visibility" : "visible"});
+            $('.container-main-post-1 .swiper-slide').css({"heigth" : "visible"});
             $('.main-posts-1 .container-principal a.down').remove();
             $('.paginator-slider').remove();
             $('.main-posts-1 .container-principal').addClass('expand');
             $('.container-hidden').fadeIn(0);
-
 
             // NOTE Eliminar todas las informaciones detalladas de cada slide excpeto la primera.
             var slidesInfoCollection = $(".slide-info");
@@ -331,26 +330,54 @@
                 // construct player
                 $(videoContainer[0]).attr('id','video0');
                 videoPlayer = videojs('video0');
-                console.log(videoPlayer)
+
+                // Setting classes at page init
+               /* if($(window).innerWidth() < 1077){
+                    $('.video-js, video').addClass('vjs-16-9');
+                }
+                else {
+                    $('.video-js, video').addClass('slide-single-mode--video');
+
+                }
+
+                // Setting classes at windows resize
+                $(window).resize(function() {
+
+                    if($(window).innerWidth()<1077){
+                        $('.video-js, video').addClass('vjs-16-9');
+                        $('.video-js, video').removeClass('slide-single-mode--video');
+
+                    }
+                    else{
+                        $('.video-js, video').removeClass('vjs-16-9');
+                        $('.video-js, video').addClass('slide-single-mode--video');
+
+                    }
+
+                });*/
 
                 // capturar evento loaderComplete para lanzar la reproducción del primer video
                 $(document).on("loaderComplete", function(){
                     if($(window).innerWidth()>=1077){
                         videoPlayer.play();
                     }
+
                     $(document).off("loaderComplete");
                 })
 
             }
+            else {
+                // Annadiendo clases si el primer slide es una imagen
+                //$('.swiper-slide').addClass('slide-single-mode--img');
+
+            }
+
+
+
 
         }
 
-        // NOTE Resize para el video
-        $(window).resize(function() {
-            $('.video-js, video').css({'height': ' '});
-            $('.video-js, video').css({'height': $('.container-main-post-1 .swiper-slide').innerHeight()});
-        });
-        $('.video-js, video').css({'height': $('.container-main-post-1 .swiper-container').innerHeight()});
+
 
     });
 })();

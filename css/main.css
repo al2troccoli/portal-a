@@ -7027,3 +7027,56 @@ footer .footer-social h6{
 .swiper-slide.swiper-slide-active{
         visibility:visible;
 }
+
+/* slider styles for SINGLE SLIDE MODE ************************************************************************/
+
+.slide-single-mode--img {
+    height: auto !important;
+
+}
+
+.slide-single-mode--video {
+    height: 517px !important;
+
+}
+    @media screen and (max-width: 1230px){
+        .slide-single-mode--video {
+            height: 464px !important;
+        }
+    }
+
+.swiper-slide{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #fff;
+}
+
+.slideWrapper {
+    height: 0;
+    position: relative;
+    padding-bottom: 62.89%; /* Aspect ratio of the slider on the design: 517 height between 822 width*/
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.swiper-slide .video-js,
+.swiper-slide article {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+@media screen and (max-width: 1230px) and (min-width:1077px){
+    .swiper-wrapper {
+        margin-top: 13px;
+    }
+
+    .swiper-container {
+        background-color: white;
+    }
+}
