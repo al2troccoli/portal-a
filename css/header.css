@@ -609,7 +609,7 @@
         padding: 33px 26px 32px 26px;
     }
 
-    .menu-right .c-hamburger span, .menu-right .c-hamburger span:before, .menu-right .c-hamburger span:after{
+    .menu-right .c-hamburger span, .menu-right .c-hamburger span:before, .menu-right .c-hamburger span:after, footer .c-hamburger span, footer .c-hamburger span:before{
         position:relative;
         height:1px;
         color:#999;
@@ -619,7 +619,7 @@
         top: -6px;
     }
 
-    .full-width-header .c-hamburger span:after {
+    .full-width-header .c-hamburger span:after, footer .c-hamburger span:after {
         bottom: -6px; 
     }
 
