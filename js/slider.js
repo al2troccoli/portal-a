@@ -308,7 +308,6 @@
             var slidesInfoLength = $(".slide-info").length;
             var i = slidesInfoLength - 1;
             while(i > 0) {
-                console.log(slidesInfoCollection[i]);
                 $(slidesInfoCollection[i]).remove();
                 i--;
             }
@@ -318,7 +317,6 @@
             var slidesCollectionLength = slidesCollection.length;
             var j = slidesCollectionLength - 1;
             while(j > 0) {
-                console.log(j)
                 $(slidesCollection[j]).remove();
                 j--;
             }
@@ -331,31 +329,6 @@
                 $(videoContainer[0]).attr('id','video0');
                 videoPlayer = videojs('video0');
 
-                // Setting classes at page init
-               /* if($(window).innerWidth() < 1077){
-                    $('.video-js, video').addClass('vjs-16-9');
-                }
-                else {
-                    $('.video-js, video').addClass('slide-single-mode--video');
-
-                }
-
-                // Setting classes at windows resize
-                $(window).resize(function() {
-
-                    if($(window).innerWidth()<1077){
-                        $('.video-js, video').addClass('vjs-16-9');
-                        $('.video-js, video').removeClass('slide-single-mode--video');
-
-                    }
-                    else{
-                        $('.video-js, video').removeClass('vjs-16-9');
-                        $('.video-js, video').addClass('slide-single-mode--video');
-
-                    }
-
-                });*/
-
                 // capturar evento loaderComplete para lanzar la reproducción del primer video
                 $(document).on("loaderComplete", function(){
                     if($(window).innerWidth()>=1077){
@@ -366,18 +339,8 @@
                 })
 
             }
-            else {
-                // Annadiendo clases si el primer slide es una imagen
-                //$('.swiper-slide').addClass('slide-single-mode--img');
-
-            }
-
-
-
 
         }
-
-
 
     });
 })();
