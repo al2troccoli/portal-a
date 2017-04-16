@@ -7030,21 +7030,6 @@ footer .footer-social h6{
 
 /* slider styles for SINGLE SLIDE MODE ************************************************************************/
 
-.slide-single-mode--img {
-    height: auto !important;
-
-}
-
-.slide-single-mode--video {
-    height: 517px !important;
-
-}
-    @media screen and (max-width: 1230px){
-        .slide-single-mode--video {
-            height: 464px !important;
-        }
-    }
-
 .swiper-slide{
     width: 100%;
     height: 100%;
